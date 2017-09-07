@@ -198,14 +198,19 @@ exports.handler = (opts) => {
     }
 
     // Load the target's template
-    const tpl = path.join(__dirname, `../../../templates/${target}.tpl`);
+    let tpl;
+    try {
+      tpl = fs.readFileSync(path.join(__dirname, `../../../templates/${opts.buildPack}/${target}.tpl`), 'utf-8');
+    } catch (err) {
+      tpl = fs.readFileSync(path.join(__dirname, `../../../templates/${target}.tpl`), 'utf-8');
+    }
     // Validate the data for the given target is sufficient
     if (targetConfig.validate) {
       targetConfig.validate(data);
     }
 
     // Generate the content
-    const generated = handlebars.compile(fs.readFileSync(tpl, 'utf-8'))(data);
+    const generated = handlebars.compile(tpl)(data);
 
     if (opts.dryRun) {
       utils.logger.log(CLI_CMD, `Printing: ${targetPath.yellow}\n${generated}`);

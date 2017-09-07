@@ -61,11 +61,11 @@ const nodejsConfig = {
     build: {},
     deploy: {},
     install: {
-      cmd: 'yarn',
-      args: ['install', '--mutex', 'file:/tmp/.yarn-mutex']
+      cmd: 'npm',
+      args: ['install']
     },
     run: {
-      cmd: 'yarn',
+      cmd: 'npm',
       args: ['test']
     }
   },

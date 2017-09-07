@@ -155,7 +155,7 @@ test.serial('should do a dry run build with defaults', async (t) => {
   t.regex(output, new RegExp(`    'GOOGLE_CLOUD_PROJECT=${process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || ''}'`));
   t.is(output.includes(`  ]`), true);
   t.regex(output, new RegExp(`  entrypoint: 'samples'`));
-  t.is(output.includes(`  args: ['test', 'install', '--cmd', 'yarn', '--', 'install', '--mutex', 'file:/tmp/.yarn-mutex']`), true);
+  t.is(output.includes(`  args: ['test', 'install', '--cmd', 'npm', '--', 'install']`), true);
   t.is(output.includes(`- name: 'gcr.io/$PROJECT_ID/nodejs'`), true);
   t.is(output.includes(`  env: [`), true);
   t.regex(output, new RegExp(`    'CLOUD_BUILD=true',`));
@@ -164,6 +164,6 @@ test.serial('should do a dry run build with defaults', async (t) => {
   t.regex(output, new RegExp(`    'GOOGLE_CLOUD_PROJECT=${process.env.GCLOUD_PROJECT || process.env.GOOGLE_CLOUD_PROJECT || ''}'`));
   t.is(output.includes(`  ]`), true);
   t.regex(output, new RegExp(`  entrypoint: 'samples'`));
-  t.is(output.includes(`  args: ['test', 'run', '--cmd', 'yarn', '--', 'test']`), true);
+  t.is(output.includes(`  args: ['test', 'run', '--cmd', 'npm', '--', 'test']`), true);
   t.regex(output, new RegExp(`build: Dry run complete.`));
 });
