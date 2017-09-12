@@ -47,7 +47,7 @@
     "prepublishOnly": "npm run build && npm run lint",
     "release": "node ./scripts/release",
     "pretest": "npm run build && npm run lint",
-    "test": "node ./bin/tools test run --cmd nyc -- --cache ava --verbose -T 1m"
+    "test": "nyc --cache ava --verbose -T 1m"
   },
   "contributors": [
     {
@@ -78,7 +78,7 @@
     "got": "7.1.0",
     "handlebars": "4.0.10",
     "lodash": "4.17.4",
-    "nyc": "11.1.0",
+    "nyc": "11.2.1",
     "proxyquire": "1.8.0",
     "sinon": "3.2.1",
     "string": "3.3.3",
