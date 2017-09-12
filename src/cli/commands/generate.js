@@ -30,6 +30,14 @@ const utils = require('../../utils');
 handlebars.registerHelper('slugify', (str) => string(str).slugify().s);
 handlebars.registerHelper('trim', (str) => string(str).trim().s);
 handlebars.registerHelper('release_quality', utils.createReleaseQualityBadge);
+handlebars.registerHelper('if_eq', (left, right, opts) => {
+  if (left === right) {
+    return opts.fn(this);
+  }
+  else {
+    return opts.inverse(this);
+  }
+});
 handlebars.registerHelper('syntax_highlighting_ext', (opts) => {
   const repoPath = path.parse(opts.data.root.repoPath).name.replace('google', '').replace('cloud', '');
   if (repoPath.includes('csharp') || repoPath.includes('dotnet')) {
