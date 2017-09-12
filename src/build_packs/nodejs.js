@@ -72,7 +72,7 @@ const nodejsConfig = {
   generate: {
     jsdoc: {
       description: 'Generate JSDoc configuration.',
-      filename: '.jsdoc.js',
+      filename: '.jsdoc.js'
     },
     lib_readme: {
       lib_install_cmd: 'npm install --save {{name}}',

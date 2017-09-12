@@ -16,26 +16,25 @@
 
 'use strict';
 
-
 module.exports = {
   opts: {
     readme: 'README.md',
     package: 'package.json',
-    template: 'node_modules/jsdoc-baseline/',
+    template: 'node_modules/jsdoc-baseline/'
   },
   plugins: [
-    'plugins/markdown',
+    'plugins/markdown'
   ],
   source: {
     excludePattern: '(^|\\/|\\\\)[._]',
     include: [
-      'src',
+      'src'
     ],
-    includePattern: '\\.js$',
+    includePattern: '\\.js$'
   },
   templates: {
     baseline: {
-      sourceFiles: false,
-    },
-  },
+      sourceFiles: false
+    }
+  }
 };

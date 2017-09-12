@@ -47,7 +47,7 @@
     "prepublishOnly": "npm run build && npm run lint",
     "release": "node ./scripts/release",
     "pretest": "npm run build && npm run lint",
-    "test": "node ./bin/tools test run --cmd nyc -- --cache ava --verbose -T 1m"
+    "test": "nyc --cache ava --verbose -T 1m"
   },
   "contributors": [
     {
