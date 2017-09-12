@@ -72,7 +72,7 @@ const nodejsConfig = {
   generate: {
     jsdoc: {
       description: 'Generate JSDoc configuration.',
-      filename: '.jsdoc.js'
+      filename: '.jsdoc.js',
     },
     lib_readme: {
       lib_install_cmd: 'npm install --save {{name}}',
@@ -81,6 +81,10 @@ const nodejsConfig = {
         return require(path.join(buildPack._cwd, 'package.json')).name;
       }
     },
+    nycrc: {
+      description: 'Generate nyc configuration.',
+      filename: '.nycrc',
+    }
     samples_readme: {
       setup: SETUP,
       tests: TESTS
