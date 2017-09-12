@@ -16,7 +16,7 @@ possible:
   - OS:
   - Node.js version:
   - npm version:
-  - google-cloud-node version:
+  - {{lib_pkg_name}} version:
 
 #### Steps to reproduce
 
