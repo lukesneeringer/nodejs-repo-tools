@@ -84,7 +84,7 @@ const nodejsConfig = {
     nycrc: {
       description: 'Generate nyc configuration.',
       filename: '.nycrc',
-    }
+    },
     samples_readme: {
       setup: SETUP,
       tests: TESTS
