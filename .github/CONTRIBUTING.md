@@ -54,6 +54,8 @@ accept your pull requests.
 
 1.  Run the tests:
 
+        export GCLOUD_PROJECT=your-project-id
+        export GOOGLE_APPLICATION_CREDENTIALS=/path/to/keyfile.json
         npm test
 
 [setup]: https://cloud.google.com/nodejs/docs/setup
