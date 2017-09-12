@@ -34,9 +34,7 @@ handlebars.registerHelper('if_eq', (left, right, opts) => {
   if (left === right) {
     return opts.fn(this);
   }
-  else {
-    return opts.inverse(this);
-  }
+  return opts.inverse(this);
 });
 handlebars.registerHelper('syntax_highlighting_ext', (opts) => {
   const repoPath = path.parse(opts.data.root.repoPath).name.replace('google', '').replace('cloud', '');
